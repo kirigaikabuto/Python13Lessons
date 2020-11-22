@@ -6,7 +6,10 @@ b = int(input("b="))  # 4
 #     ....
 # else:
 #     действия если условие выдало False
+# если a>b - > a+b
+# иначе a-b
 if a > b:
+    c = a +b
     print("Условие True")
     print("a>b")
 else:
