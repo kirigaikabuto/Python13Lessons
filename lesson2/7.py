@@ -6,6 +6,7 @@ if name != "":
 else:
     print("Please write something")
     exit()
+
 year = input("введите год рождения:")
 if year != "":
     if year.isnumeric():
