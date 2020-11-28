@@ -1,5 +1,5 @@
 i = 0
-n = 5
+n = 6
 while i < n:
     print("Hello")
     i += 1
