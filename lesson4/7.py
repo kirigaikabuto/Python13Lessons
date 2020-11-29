@@ -9,6 +9,7 @@ for i in range(start, end + 1):
         counterNeChet += 1
 print(f"количество четных {counterChet}")
 print(f"количество нечетных {counterNeChet}")
+
 # 3
 # 10
 #
