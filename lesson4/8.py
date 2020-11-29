@@ -1,14 +1,18 @@
-1) сколько входящих данных?
-2) какой цикл использовать?
-3) какое условие необходимо для выхода из цикла?
+znak = ""
 
-+
-3
-4
-Ответ: 7
--
-4
-7
-Ответ: -3
-0
-
+while znak != "0":
+    znak = input("znak:")
+    if znak == "0":
+        break
+    a = int(input("number1:"))
+    b = int(input("number2:"))
+    output = 0
+    if znak == "+":
+        output = a + b
+    elif znak == "-":
+        output = a - b
+    elif znak == "/":
+        output = a / b
+    elif znak == "*":
+        output = a * b
+    print(output)
