@@ -1,3 +1,14 @@
+start = int(input())
+end = int(input())
+counterChet = 0
+counterNeChet = 0
+for i in range(start, end + 1):
+    if i % 2 == 0:
+        counterChet += 1
+    if i % 2 != 0:
+        counterNeChet += 1
+print(f"количество четных {counterChet}")
+print(f"количество нечетных {counterNeChet}")
 # 3
 # 10
 #
