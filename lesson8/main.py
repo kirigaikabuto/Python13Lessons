@@ -27,3 +27,6 @@ textFileName = "1.txt"
 file = open(textFileName, "w")  # w-write, r - read
 file.write(messageToFile)
 file.close()
+#на рабочем столе создать папку и внутри этоп папки создать две папки (folder1,folder2)
+# затем в папке folder1 создать файл file1.txt и поместить туда свое имя
+# затем в папке folder2 создал файл file2.txt и поместить туда свою фамилию
