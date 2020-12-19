@@ -1,0 +1,6 @@
+file = open("newData.txt", "r")
+data = file.read()
+file.close()
+words = data.split("\n")
+print(words)
+print(words[0])

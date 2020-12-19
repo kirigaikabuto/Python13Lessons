@@ -1,0 +1,5 @@
+file = open("newData.txt", "r")
+data = file.readlines()
+file.close()
+print(data)
+print(data[0])
