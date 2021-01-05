@@ -2,3 +2,10 @@
 # #индексы: name, education_name, age,
 # создать словарь и вывести полностью все значения
 # и отдельно используя индекс
+d = {
+    "name": "Yerassyl",
+    "age": 22,
+}
+print(d["name"])
+for i in d:
+    print(i, d[i])
