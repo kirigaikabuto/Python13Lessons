@@ -27,6 +27,7 @@ if number == "1":
     password = input("password:")
     # 6
     for i in users:
+        # 7
         if i["username"] == username:
             isUsername = True
             if i["password"] == password:
@@ -40,3 +41,7 @@ if number == "1":
             print("Неправильный пароль")
     else:
         print("У нас нет такого пользователя")
+elif number == "2":
+    pass
+else:
+    print("нет такой команды")
