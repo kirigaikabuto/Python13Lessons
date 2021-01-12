@@ -1,12 +1,12 @@
 [
     {
         "name": "product1",
-        "price": 100,
+        "price": 1000,
         "description": "it is product1"
     },
     {
         "name": "product3",
         "price": 300,
-        "description": "it is product 3"
+        "description": "asdsdsaddsadadasd asdsadad asdsadad"
     }
 ]
