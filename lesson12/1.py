@@ -1,9 +1,15 @@
-#CRUD
+# CRUD
 # C->Create
 # R->Read
 # U->Update
 # D->Delete
-#product
+# product
 # name
 # description
 # price
+
+
+# person
+# first_name:str
+# last_name:str
+# salary:int
