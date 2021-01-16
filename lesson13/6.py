@@ -11,8 +11,16 @@ def getMax(arr):
 
 
 def getAverage(arr):
+    sumi = 0
+    n = len(arr)
+    for i in arr:
+        sumi = sumi + i
+    return sumi / n
 
 
 maxi1 = getMax(arr1)
 maxi2 = getMax(arr2)
+avg1 = getAverage(arr1)
+avg2 = getAverage(arr2)
 print(maxi1, maxi2)
+print(avg1, avg2)
