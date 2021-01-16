@@ -10,6 +10,9 @@ def getMax(arr):
     return maxi
 
 
+def getAverage(arr):
+
+
 maxi1 = getMax(arr1)
 maxi2 = getMax(arr2)
 print(maxi1, maxi2)
