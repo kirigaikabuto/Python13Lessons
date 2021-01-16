@@ -1,0 +1,7 @@
+1)
+getSum() ->[1,2,3,4] -> 10
+getAvg() ->[1,2,3,4] -> 2.5
+getMax() ->[1,2,3,4] -> 4
+getMin()
+getOnlyText() -> ["Hello", "sdsdd",12323,323] -> ["Hello", "sdsdd"]
+getOnlyNumbers()->["Hello", "sdsdd",12323,323] -> [12323, 323]
