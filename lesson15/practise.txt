@@ -6,3 +6,41 @@
 2)
 ["Hello","World","Good","Day"]
 ["hello","world","good","day"]
+
+3)
+[
+    {
+        "first_name":"yerassyl",
+        "last_name":"Tleugazy",
+        "per_year_salary":1000000,
+    },
+    ...
+]
+
+3.1 добавить используя map поле full_name -> first_name+" "+last_name(Tleugazy yerassyl)
+
+[
+    {
+        "first_name":"yerassyl",
+        "last_name":"Tleugazy",
+        "per_year_salary":1000000,
+        "full_name":"Tleugazy yerassyl",
+    },
+    ...
+]
+
+3.2 добавить используя map поле per_month_salary->
+
+[
+    {
+        "first_name":"yerassyl",
+        "last_name":"Tleugazy",
+        "per_year_salary":1000000,
+        "full_name":"Tleugazy yerassyl",
+        "per_month_salary":80000
+    },
+    ...
+]
+
+3.3 вывести тех людей у которых зарплата большее 80000 (filter)
+3.4 используя reduce посчитать сумму всех зарплат(per_year_salary) а затем найти среднююю зарплату
