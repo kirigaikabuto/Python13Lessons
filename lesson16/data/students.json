@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "first_name": "yerassyl",
+        "last_name": "tleugazy",
+        "email": "tleugazy98@gmail.com",
+        "phone": "87086394516",
+        "username": "kirigaikabuto",
+        "password": "passanya99",
+        "group_id": 2
+    },
+    {
+        "id": 2,
+        "first_name": "anel",
+        "last_name": "tleugazy",
+        "email": "anel98@gmail.com",
+        "phone": "87086394516",
+        "username": "kawaianel",
+        "password": "passanya99",
+        "group_id": 1
+    }
+]

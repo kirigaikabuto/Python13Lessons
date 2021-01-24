@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "name": "math",
+        "credit": 3
+    },
+    {
+        "id": 2,
+        "name": "algebra",
+        "credit": 4
+    }
+]

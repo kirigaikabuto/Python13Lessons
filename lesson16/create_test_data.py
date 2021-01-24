@@ -16,8 +16,8 @@ students = [
         "last_name": "tleugazy",
         "email": "tleugazy98@gmail.com",
         "phone": "87086394516",
-        "username": "sdsddsd",
-        "password": "asdsasds",
+        "username": "kirigaikabuto",
+        "password": "passanya99",
         "group_id": 2,
     },
     {
@@ -26,6 +26,8 @@ students = [
         "last_name": "tleugazy",
         "email": "anel98@gmail.com",
         "phone": "87086394516",
+        "username": "kawaianel",
+        "password": "passanya99",
         "group_id": 1,
     },
 ]
@@ -37,17 +39,17 @@ teachers = [
         "last_name": "teacher1",
         "email": "teacher1@gmail.com",
         "phone": "87086394516",
-        "username": "sdsddsd",
-        "password": "asdsasds",
+        "username": "teacher1",
+        "password": "teacher1",
     },
     {
         "id": 2,
         "first_name": "anel",
         "last_name": "tleugazy",
-        "email": "anel98@gmail.com",
+        "email": "teacher2@gmail.com",
         "phone": "87086394516",
-        "username": "sdsddsd",
-        "password": "asdsasds",
+        "username": "teacher2",
+        "password": "teacher2",
     },
 ]
 
@@ -72,5 +74,19 @@ schedule = [
         "teacher_id": 2,
         "time": "24.01.2021",
     },
-
+    {
+        "id": 1,
+        "group_id": 1,
+        "subject_id": 2,
+        "teacher_id": 1,
+        "time": "25.01.2021",
+    },
 ]
+
+from utils import saveToJsonFile
+
+saveToJsonFile(students, "./data/students.json")
+saveToJsonFile(teachers, "./data/teachers.json")
+saveToJsonFile(groups, "./data/groups.json")
+saveToJsonFile(subjects, "./data/subjects.json")
+saveToJsonFile(schedule, "./data/schedule.json")

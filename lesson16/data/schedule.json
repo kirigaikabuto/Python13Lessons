@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "group_id": 2,
+        "subject_id": 1,
+        "teacher_id": 2,
+        "time": "24.01.2021"
+    },
+    {
+        "id": 1,
+        "group_id": 1,
+        "subject_id": 2,
+        "teacher_id": 1,
+        "time": "25.01.2021"
+    }
+]
