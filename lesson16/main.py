@@ -19,6 +19,19 @@ def FilterBySalary(di):
     return False
 
 
+def CalculateAllYearSalary(a, b):
+    if isinstance(a, dict):
+        sumi = a["per_year_salary"] + b["per_year_salary"]
+    else:
+        sumi = a + b["per_year_salary"]
+    return sumi
+
+
+def GetAverageYearSalary(data):
+    AllSalary = reduce(CalculateAllYearSalary, data)
+    return AllSalary / len(data)
+
+
 peoples = [
     {
         "first_name": "yerassyl",
@@ -48,4 +61,8 @@ peoples2 = list(map(AddPerMonthSalary, peoples))
 print(peoples2)
 peoples3 = list(filter(FilterBySalary, peoples2))
 print(peoples3)
+AllYearSalary2 = GetAverageYearSalary(peoples2)
+AllYearSalary3 = GetAverageYearSalary(peoples3)
+print(AllYearSalary2)
+print(AllYearSalary3)
 # CTRL + ALT + L
