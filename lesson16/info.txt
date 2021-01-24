@@ -1,0 +1,44 @@
+student
+{
+ Id
+ FirstName
+ LastName
+ Username
+ Password
+ Email
+ PhoneNumber
+ GroupId
+}
+
+teacher
+{
+ Id
+ FirstName
+ LastName
+ Username
+ Password
+ Email
+ PhoneNumber
+}
+
+group
+{
+    Id:
+    Name:
+}
+
+lesson
+{
+    id
+    name
+    credit(сколько раз в неделю идет предмет)
+}
+
+schedule
+{
+    id:
+    group_id
+    lesson_id
+    techer_id
+    time
+}
