@@ -37,7 +37,8 @@ teachers = [
         "last_name": "teacher1",
         "email": "teacher1@gmail.com",
         "phone": "87086394516",
-
+        "username": "sdsddsd",
+        "password": "asdsasds",
     },
     {
         "id": 2,
@@ -45,17 +46,21 @@ teachers = [
         "last_name": "tleugazy",
         "email": "anel98@gmail.com",
         "phone": "87086394516",
+        "username": "sdsddsd",
+        "password": "asdsasds",
     },
 ]
 
-lessons = [
+subjects = [
     {
         "id": 1,
-        "name": "math"
+        "name": "math",
+        "credit": 3,
     },
     {
         "id": 2,
-        "name": "algebra"
+        "name": "algebra",
+        "credit": 4,
     }
 ]
 
@@ -63,7 +68,7 @@ schedule = [
     {
         "id": 1,
         "group_id": 2,
-        "lesson_id": 1,
+        "subject_id": 1,
         "teacher_id": 2,
         "time": "24.01.2021",
     },
