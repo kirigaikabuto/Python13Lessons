@@ -42,3 +42,15 @@ schedule
     techer_id
     time
 }
+
+1.Teacher
+2.Student
+
+[Teacher]
+1.Login
+2.Register
+3.Back
+
+[Student]
+1.Login
+2.Back

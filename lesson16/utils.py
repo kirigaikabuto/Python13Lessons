@@ -6,3 +6,11 @@ def saveToJsonFile(data, fileName):
     file = open(fileName, "w")
     file.write(dataJson)
     file.close()
+
+
+def getDataFromJsonFile(fileName):
+    file = open(fileName, "r")
+    dataJson = file.read()
+    file.close()
+    data = json.loads(dataJson)
+    return data
