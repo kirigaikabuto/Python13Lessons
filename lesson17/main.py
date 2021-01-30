@@ -2,3 +2,4 @@ import pymongo
 
 client = pymongo.MongoClient("mongodb://localhost:27017/")
 db = client["yerassyldb"]
+collection = db["products"]
