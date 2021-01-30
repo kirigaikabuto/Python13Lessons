@@ -1,0 +1,17 @@
+server -> mongodb ->
+
+GUI (GRAPH USER INTERFACE) -> ROBO 3t
+
+База данных
+
+mongodb
+
+host -> localhost -> (127.0.0.1)
+        87.34.23.41
+
+server -> открыт для всех ->
+PC -> закрыт для всех -> localhost:
+mongodb : localhost:27017
+mysql : localhost:3306
+-----------------------------
+pip install pymongo
