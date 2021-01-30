@@ -1,0 +1,10 @@
+1) создать базу данных
+2) создать коллекцию
+3) используя python сделать CRUD( create,read,update,delete)
+
+users - >
+{
+    "username":"user1",
+    "password":"12345"
+}
+
