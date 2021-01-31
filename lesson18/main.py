@@ -20,7 +20,9 @@ def phoneNumberVerification(phoneNumber):
     inputCode = input('code:')
     for i in codes:
         if inputCode == i["code"]:
+            codeCollection.remove(d)
             return True
+    codeCollection.remove(d)
     return False
 
 
