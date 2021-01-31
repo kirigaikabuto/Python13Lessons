@@ -1,8 +1,27 @@
 import pymongo
+import random
+from sms_sender import send_sms
 
 client = pymongo.MongoClient("mongodb://localhost:27017/")
 db = client["university"]
 studentsCollection = db["students"]
+
+
+def phoneNumberVerification(phoneNumber):
+    print("---We send code to your phoneNumber---")
+    codeCollection = db["codes"]
+    code = str(random.randint(10000, 99999))
+    d = {
+        "code": code
+    }
+    codeCollection.insert_one(d)
+    send_sms(phoneNumber, code)
+    codes = codeCollection.find({"code": code})
+    inputCode = input('code:')
+    for i in codes:
+        if inputCode == i["code"]:
+            return True
+    return False
 
 
 def studentMainMenu():
@@ -11,12 +30,16 @@ def studentMainMenu():
 
 def studentRegister():
     print("---STUDENT REGISTER---")
+    phoneNumber = input("phone_number:")
+    verified = phoneNumberVerification(phoneNumber)
+    if not verified:
+        print("Your phoneNumber not verified, repeat registration")
+        studentRegister()
+    userName = input("username:")
+    password = input("password:")
     firstName = input("first_name:")
     lastName = input("last_name:")
     email = input("email:")
-    phoneNumber = input("phone_number:")
-    userName = input("username:")
-    password = input("password:")
     groupId = int(input("group_id:"))
     student = {
         "id": 3,
@@ -31,7 +54,6 @@ def studentRegister():
     studentsCollection.insert_one(student)
     print("---Registration ended successfully---")
     studentMainMenu()
-
 
 
 def studentStart():
