@@ -44,7 +44,7 @@ def studentRegister():
     email = input("email:")
     groupId = int(input("group_id:"))
     student = {
-        "id": 3,
+        "id": random.randint(10, 100000000),
         "first_name": firstName,
         "last_name": lastName,
         "email": email,
