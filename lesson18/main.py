@@ -7,10 +7,12 @@ studentsCollection = db["students"]
 
 def studentStart():
     print("[1]Login")
-    print("[3]Register")
+    print("[2]Register")
     print("[3]Back")
     num = input()
     if num == "1":
+        pass
+    if num == "2":
         pass
     elif num == "3":
         start()
