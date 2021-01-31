@@ -5,6 +5,35 @@ db = client["university"]
 studentsCollection = db["students"]
 
 
+def studentMainMenu():
+    print("---MAIN MENU---")
+
+
+def studentRegister():
+    print("---STUDENT REGISTER---")
+    firstName = input("first_name:")
+    lastName = input("last_name:")
+    email = input("email:")
+    phoneNumber = input("phone_number:")
+    userName = input("username:")
+    password = input("password:")
+    groupId = int(input("group_id"))
+    student = {
+        "id": 3,
+        "first_name": firstName,
+        "last_name": lastName,
+        "email": email,
+        "phone": phoneNumber,
+        "username": userName,
+        "password": password,
+        "group_id": groupId,
+    }
+    studentsCollection.insert_one(student)
+    print("---Registration ended successfully---")
+    studentMainMenu()
+
+
+
 def studentStart():
     print("[1]Login")
     print("[2]Register")
@@ -13,7 +42,7 @@ def studentStart():
     if num == "1":
         pass
     if num == "2":
-        pass
+        studentRegister()
     elif num == "3":
         start()
     else:
