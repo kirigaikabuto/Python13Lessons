@@ -91,5 +91,5 @@ db = client["university"]
 # groupsCollection.insert_many(groups)
 # studentsCollection = db["students"]
 # studentsCollection.insert_many(students)
-# teachersCollection = db["teachers"]
-# teachersCollection.insert_many(teachers)
+teachersCollection = db["teachers"]
+teachersCollection.insert_many(teachers)
