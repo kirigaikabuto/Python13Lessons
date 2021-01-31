@@ -17,7 +17,7 @@ def studentRegister():
     phoneNumber = input("phone_number:")
     userName = input("username:")
     password = input("password:")
-    groupId = int(input("group_id"))
+    groupId = int(input("group_id:"))
     student = {
         "id": 3,
         "first_name": firstName,
