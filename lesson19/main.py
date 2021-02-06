@@ -26,6 +26,57 @@ def phoneNumberVerification(phoneNumber):
     return False
 
 
+def resetPassword():
+    print("---RESET PASSWORD---")
+    phone = input("phone:")
+    filter = {
+        "phone": phone,
+    }
+    users = list(studentsCollection.find(filter))
+    if len(users) != 0:
+        check = phoneNumberVerification(phone)
+        if check:
+            user = users[0]
+            newPassword = input("new password:")
+            user["password"] = newPassword
+            update = {
+                "$set": user
+            }
+            studentsCollection.update_one(filter, update)
+            studentStart()
+        else:
+            print("Not correct code")
+            resetPassword()
+    else:
+        print("There is no user with that phone number")
+        resetPassword()
+
+
+def studentLogin():
+    print("---STUDENT LOGIN---")
+    username = input("username:")
+    password = input("password:")
+    filter = {
+        "username": username,
+        "password": password,
+    }
+    users = list(studentsCollection.find(filter))
+    if len(users) != 0:
+        studentMainMenu()
+    else:
+        print("There is no user by this username and password")
+        print("[1]Try login")
+        print("[2]Reset Password")
+        print("[3]Go back")
+        num = input("choice:")
+        if num == "1":
+            studentLogin()
+        elif num == "2":
+            resetPassword()
+        elif num == "3":
+            studentStart()
+
+
 def studentMainMenu():
     print("---MAIN MENU---")
 
@@ -64,7 +115,7 @@ def studentStart():
     print("[3]Back")
     num = input()
     if num == "1":
-        pass
+        studentLogin()
     if num == "2":
         studentRegister()
     elif num == "3":

@@ -30,6 +30,16 @@ students = [
         "password": "passanya99",
         "group_id": 1,
     },
+    {
+        "id": 3,
+        "first_name": "student3",
+        "last_name": "student3",
+        "email": "student3@gmail.com",
+        "phone": "+77086394516",
+        "username": "student3",
+        "password": "student3",
+        "group_id": 1,
+    },
 ]
 
 teachers = [
@@ -87,9 +97,10 @@ import pymongo
 
 client = pymongo.MongoClient("mongodb://localhost:27017/")
 db = client["university"]
-groupsCollection = db["groups"]
-groupsCollection.insert_many(groups)
-studentsCollection = db["students"]
-studentsCollection.insert_many(students)
-teachersCollection = db["teachers"]
-teachersCollection.insert_many(teachers)
+# groupsCollection = db["groups"]
+# groupsCollection.insert_many(groups)
+# studentsCollection = db["students"]
+# studentsCollection.insert_many(students)
+# teachersCollection = db["teachers"]
+# teachersCollection.insert_many(teachers)
+db["students"].insert_one(students[2])
