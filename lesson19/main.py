@@ -5,6 +5,10 @@ from sms_sender import send_sms
 client = pymongo.MongoClient("mongodb://localhost:27017/")
 db = client["university"]
 studentsCollection = db["students"]
+teachersCollection = db["teachers"]
+subjectsCollection = db["subjects"]
+scheduleCollection = db["schedule"]
+groupsCollection = db["groups"]
 
 
 def phoneNumberVerification(phoneNumber):
@@ -62,7 +66,8 @@ def studentLogin():
     }
     users = list(studentsCollection.find(filter))
     if len(users) != 0:
-        studentMainMenu()
+        student = users[0]
+        studentMainMenu(student)
     else:
         print("There is no user by this username and password")
         print("[1]Try login")
@@ -77,8 +82,44 @@ def studentLogin():
             studentStart()
 
 
-def studentMainMenu():
+def schedulePrettyShow(schedule):
+    schedule_id = schedule["id"]
+    group_id = schedule["group_id"]
+    teacher_id = schedule["teacher_id"]
+    subject_id = schedule["subject_id"]
+    filter_group = {
+        "id": group_id,
+    }
+    group = subjectsCollection.find_one(filter_group)
+    filter_teacher = {
+        "id": teacher_id,
+    }
+    teacher = teachersCollection.find_one(filter_teacher)
+    filter_subject = {
+        "id": subject_id,
+    }
+    subject = subjectsCollection.find_one(filter_subject)
+    output = f"№{schedule_id}, {group['name']} {teacher['first_name']} {teacher['last_name']} {subject['name']} {schedule['time']}"
+    print(output)
+
+
+def scheduleStart(student):
+    filter = {
+        "group_id": student["group_id"]
+    }
+    schedules = list(scheduleCollection.find(filter))
+    for i in schedules:
+        schedulePrettyShow(i)
+
+
+def studentMainMenu(student):
     print("---MAIN MENU---")
+    print("Hello " + student["first_name"] + " " + student["last_name"])
+    print("[1]Schedule")
+    num = int(input("choice:"))
+    if num == 1:
+        scheduleStart(student)
+        studentMainMenu(student)
 
 
 def studentRegister():
@@ -106,7 +147,7 @@ def studentRegister():
     }
     studentsCollection.insert_one(student)
     print("---Registration ended successfully---")
-    studentMainMenu()
+    studentStart()
 
 
 def studentStart():

@@ -103,4 +103,10 @@ db = client["university"]
 # studentsCollection.insert_many(students)
 # teachersCollection = db["teachers"]
 # teachersCollection.insert_many(teachers)
-db["students"].insert_one(students[2])
+# db["students"].insert_one(students[2])
+# scheduleCollection = db["schedule"]
+# scheduleCollection.insert_many(schedule)
+subjectCollections = db["subjects"]
+subjectCollections.insert_many(subjects)
+
+
