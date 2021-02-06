@@ -87,9 +87,9 @@ import pymongo
 
 client = pymongo.MongoClient("mongodb://localhost:27017/")
 db = client["university"]
-# groupsCollection = db["groups"]
-# groupsCollection.insert_many(groups)
-# studentsCollection = db["students"]
-# studentsCollection.insert_many(students)
+groupsCollection = db["groups"]
+groupsCollection.insert_many(groups)
+studentsCollection = db["students"]
+studentsCollection.insert_many(students)
 teachersCollection = db["teachers"]
 teachersCollection.insert_many(teachers)
