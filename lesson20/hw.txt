@@ -1,0 +1,8 @@
+создать класс Student
+--name("yerassyl")
+--date_birth(19.01.1998)
+--marks([4,3,2,4,2])
+
+getAverageMark()
+getRealAge()
+show() -> yerassyl 23 3.25
