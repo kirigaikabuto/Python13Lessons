@@ -16,7 +16,14 @@ computerDictionary3 = {
     "processor": "intel core i7",
     "prices": 1300000,
 }
-# def caclulateSomething(d):
+
+
+def caclulateSomething(d):
+    print(d)
+
+
+caclulateSomething(computerDictionary1)
+
 computers = [computerDictionary1, computerDictionary2, computerDictionary3]
 sumi = 0
 for i in computers:
