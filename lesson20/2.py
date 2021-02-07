@@ -3,7 +3,6 @@ class Triangle:
         self.a = a
         self.b = b
         self.c = c
-        print("object is created")
 
     def show(self):
         s = f"A={self.a},B={self.b},C={self.c}"
