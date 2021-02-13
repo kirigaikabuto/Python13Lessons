@@ -5,3 +5,8 @@ class StudentList:
     def print_info(self):
         for i in self.students:
             i.print_info()
+
+    def filter_by_age(self, age):
+        for i in self.students:
+            if i.age >= age:
+                i.print_info()
