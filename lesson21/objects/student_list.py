@@ -14,6 +14,17 @@ class StudentList:
     def filter_by_grade_name(self, name):
         pass
 
+    def get_students_by_grade_name(self, name):
+        students = []
+        for i in self.students:
+            if i.grade.name == name:
+                students.append(i.username)
+        return students
+
     def filter_by_grade(self):
         grades_names = ["11a", "11b", "11c"]
-        pass
+        d = {}
+        for i in grades_names:
+            # code
+            d[i] = self.get_students_by_grade_name(i)
+        print(d)
