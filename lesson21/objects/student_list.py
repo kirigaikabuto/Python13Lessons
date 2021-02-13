@@ -13,3 +13,7 @@ class StudentList:
 
     def filter_by_grade_name(self, name):
         pass
+
+    def filter_by_grade(self):
+        grades_names = ["11a", "11b", "11c"]
+        pass

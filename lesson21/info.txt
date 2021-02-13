@@ -6,3 +6,8 @@ Student:
     age:int
     grade:Grade
 
+{
+    "11b":["student3","student4"],
+    "11a":["student1","student2"],
+    ...
+}
