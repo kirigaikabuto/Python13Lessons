@@ -10,3 +10,6 @@ class StudentList:
         for i in self.students:
             if i.age >= age:
                 i.print_info()
+
+    def filter_by_grade_name(self, name):
+        pass

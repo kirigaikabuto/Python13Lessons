@@ -16,3 +16,4 @@ st31 = Student("student6", 13, g3)
 students = [st1, st12, st2, st21, st3, st31]
 sl1 = StudentList(students)
 sl1.filter_by_age(15)
+sl1.filter_by_grade_name("11b")
