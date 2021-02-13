@@ -28,3 +28,9 @@ class StudentList:
             # code
             d[i] = self.get_students_name_by_grade_name(i)
         print(d)
+
+    def filter_by_ages(self):
+        ages = [15, 16, 17, 17, 19, 20]
+        d = {}
+        # code
+        print(d)
