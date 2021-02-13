@@ -1,0 +1,7 @@
+Grade:
+    name:str
+
+Student:
+    username:str
+    age:int
+    grade:Grade
