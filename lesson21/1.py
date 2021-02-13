@@ -1,5 +1,6 @@
-from objects.grade import Grade
-from objects.student import Student
+# from objects.grade import Grade
+# from objects.student import Student
+from objects import *
 
 g1 = Grade("11b")
 st1 = Student("yerassyl", 23, g1)
