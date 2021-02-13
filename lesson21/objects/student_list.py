@@ -14,7 +14,7 @@ class StudentList:
     def filter_by_grade_name(self, name):
         pass
 
-    def get_students_by_grade_name(self, name):
+    def get_students_name_by_grade_name(self, name):
         students = []
         for i in self.students:
             if i.grade.name == name:
@@ -26,5 +26,5 @@ class StudentList:
         d = {}
         for i in grades_names:
             # code
-            d[i] = self.get_students_by_grade_name(i)
+            d[i] = self.get_students_name_by_grade_name(i)
         print(d)
