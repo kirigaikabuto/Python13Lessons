@@ -1,0 +1,18 @@
+Category:
+    name:str
+    get_info():str
+Author
+    -full_name:str
+    -age:int
+    get_info():str
+Book
+    -name:str
+    -author:Author
+    -category:Category
+    get_info():str
+    print_info():
+Library:
+    -books:[]Book
+    print_info()
+    filter_by_author_full_name()
+    filter_by_category_name()
