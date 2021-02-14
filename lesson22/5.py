@@ -1,6 +1,6 @@
 from animals import *
 
 c1 = Cat("cat1", 23)
-c1.print_info()
-c1.print_number()
-c1.print_private_info()
+print(c1.get_info())
+d1 = Dog("dog1", 20)
+print(d1.get_info())

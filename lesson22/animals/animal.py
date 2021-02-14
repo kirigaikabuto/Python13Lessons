@@ -3,8 +3,9 @@ class Animal:
         self.nam = name
         self.ag = age
 
-    def print_private_info(self):
-        print(self.nam, self.ag)
+    def get_info(self):
+        out = f"Name:{self.nam},Age:{self.ag}"
+        return out
 
     def print_info(self):
         print("it is class of animal")
