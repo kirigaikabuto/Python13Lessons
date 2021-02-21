@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -7,7 +7,7 @@ app = Flask(__name__)
 def home():
     name = "Yerassyl"
     out = "<p><b>Hello</b> Yerassyl</p>"
-    return out
+    return render_template("home.html")
 
 
 @app.route("/category")
