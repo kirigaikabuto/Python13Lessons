@@ -6,5 +6,5 @@ class Student:
         self.grade = grade
 
     def print_info(self):
-        out = f"Name:{self.name};Age:{self.age};Grade:{self.grade.name}"
+        out = f"Name:{self.name};Age:{self.age};Grade:{self.grade.get_info()}"
         print(out)
