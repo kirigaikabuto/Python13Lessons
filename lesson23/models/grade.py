@@ -1,5 +1,4 @@
-class Cat:
-    
+class Grade:
     def __init__(self, name):
         self.name = name
 
