@@ -10,3 +10,7 @@ class StudentList:
                 maxi = i.age
                 student = i
         student.print_info()
+
+    def print_info(self):
+        for i in self.students:
+            i.print_info()

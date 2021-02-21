@@ -1,10 +1,12 @@
-class Student:
+from .person import Person
+
+
+class Student(Person):
 
     def __init__(self, name, age, grade):
-        self.name = name
-        self.age = age
+        super().__init__(name=name, age=age)
         self.grade = grade
 
     def print_info(self):
-        out = f"Name:{self.name};Age:{self.age};Grade:{self.grade.get_info()}"
+        out = super().get_info() + f"Grade:{self.grade.get_info()}"
         print(out)

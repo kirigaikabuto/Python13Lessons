@@ -1,10 +1,12 @@
-class Employee:
+from .person import Person
+
+
+class Employee(Person):
 
     def __init__(self, name, age, salary):
-        self.name = name
-        self.age = age
-        self.salary = self.salary
+        super().__init__(name=name, age=age)
+        self.salary = salary
 
     def print_info(self):
-        out = f"Name:{self.name};Age:{self.age};Salary:{self.salary}"
+        out = super().get_info() + f"Salary:{self.salary}"
         print(out)

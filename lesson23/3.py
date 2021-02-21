@@ -7,3 +7,4 @@ student3 = Student(name="student3", age=10, grade=grade1)
 sts = [student1, student2, student3]
 studentList = StudentList(students=sts)
 studentList.print_oldest()
+studentList.print_info()
