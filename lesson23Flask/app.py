@@ -6,12 +6,14 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     name = "Yerassyl"
-    return name
+    out = "<p><b>Hello</b> Yerassyl</p>"
+    return out
 
 
 @app.route("/category")
 def category():
-    return "Categories"
+    out = "<h1>Categories</h1>"
+    return out
 
 
 @app.route("/contacts")
