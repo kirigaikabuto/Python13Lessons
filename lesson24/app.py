@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 products = [
     "product1",
@@ -28,7 +28,17 @@ def main_page():
     message = "Hello my name is Yerassyl"
     name = "yerassyl"
 
-    return render_template("main/main_page.html", mess=message, name=name, products=products)
+    return render_template("main/main_page.html", mess=message, name=name, products=products, users=users)
+
+
+@app.route("/calculate", methods=["GET", "POST"])
+def calculate_page():
+    if request.method == "POST":
+        username = request.form.get("username")
+        password = request.form.get("password")
+        return username + " " + password
+    else:
+        return render_template("main/calculate_page.html")
 
 
 if __name__ == "__main__":
