@@ -37,6 +37,8 @@ def login_page():
     if request.method == "POST":
         username = request.form.get("username")
         password = request.form.get("password")
+        znak = request.form.get("znak")
+        print(znak)
         if len(username) == 0 or len(password) == 0:
             error = "Please write all data"
 
