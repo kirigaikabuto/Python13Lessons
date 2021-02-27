@@ -31,14 +31,21 @@ def main_page():
     return render_template("main/main_page.html", mess=message, name=name, products=products, users=users)
 
 
-@app.route("/calculate", methods=["GET", "POST"])
-def calculate_page():
+@app.route("/login", methods=["GET", "POST"])
+def login_page():
+    error = ""
     if request.method == "POST":
         username = request.form.get("username")
         password = request.form.get("password")
-        return username + " " + password
-    else:
-        return render_template("main/calculate_page.html")
+        if len(username) == 0 or len(password) == 0:
+            error = "Please write all data"
+
+    return render_template("main/login_page.html", error=error)
+
+
+@app.route("/calculator", methods=["GET", "POST"])
+def calculate_page():
+    pass
 
 
 if __name__ == "__main__":
