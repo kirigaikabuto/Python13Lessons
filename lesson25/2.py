@@ -9,19 +9,19 @@ create table if not exists products(
     price int
 )
 """
-# id = 1
-# name = "product1"
-# price = 300
-# cursor.execute(sql)
-# sql_insert = """
-# insert into products
-# (id, name, price)
-# values
-# (?,?,?)
-# """
-# cursorInsert = connection.cursor()
-# cursorInsert.execute(sql_insert, [id, name, price])
-# connection.commit()
+id = 2
+name = "product2"
+price = 3000
+cursor.execute(sql)
+sql_insert = """
+insert into products
+(id, name, price)
+values
+(?,?,?)
+"""
+cursorInsert = connection.cursor()
+cursorInsert.execute(sql_insert, [id, name, price])
+connection.commit()
 selectSql = "select * from products"
 cursorSelect = connection.cursor()
 cursorSelect.execute(selectSql)
