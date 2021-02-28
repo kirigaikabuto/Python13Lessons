@@ -6,7 +6,17 @@ create table if not exists users(
 )
 
 2) добавить данные в таблицу
-insert into название_таблицы (название_колонки)
-values (значение_для_колонки)
+insert into название_таблицы
+(название_колонки)
+values
+(значение_для_колонки)
 
-3)
+insert into users
+(id, username, password)
+values
+(2,'yerassyl123','1234564434')
+
+3) выборка данных
+select название_колонок from название_таблицы
+
+select id,username from users;
