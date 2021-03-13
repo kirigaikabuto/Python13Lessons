@@ -2,8 +2,8 @@ from django.shortcuts import render, HttpResponse
 
 
 def list_page(request):
-    return HttpResponse("Hello it is django")
+    return render(request, "products/list.html")
 
 
 def detail_page(request):
-    return HttpResponse("Hello it is detail page")
+    return render(request, "products/detail.html")
