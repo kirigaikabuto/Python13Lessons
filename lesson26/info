@@ -1,0 +1,34 @@
+1. стартовый пакет чтобы начать новый проект
+
+pip install django
+
+//create project
+django-admin startproject mysite .
+
+//run project
+python manage.py runserver
+
+//run migrations -> create database for django users
+python manage.py migrate
+
+//create super user
+python manage.py createsuperuser
+
+
+2) продумывание бизнес логикии
+интернет магазин
+-сущности
+    пользователь
+    продукты
+    заказ
+
+//create app
+python manage.py startapp products
+
+admin.py -> файл в который будем помещать модели к которым будет иметь доступ админ
+models.py -> файл где будут расположены модели
+views.py -> файл где мы связываем python с html flask(app.route)
+
+
+@app.route("products/list")
+def main_page():
