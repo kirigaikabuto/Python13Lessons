@@ -13,3 +13,9 @@ def list_page(request):
 
 def detail_page(request):
     return render(request, "products/detail.html")
+
+
+def detail_page_action(request):
+    firstName = request.POST["first_name"]
+    output = f"Hello your name is {firstName}"
+    return HttpResponse(output)
