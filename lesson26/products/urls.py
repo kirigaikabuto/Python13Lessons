@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import main_page
+from .views import *
 
 urlpatterns = [
-    path("list/", main_page)
+    path("list/", list_page),
+    path("detail/", detail_page)
 ]
