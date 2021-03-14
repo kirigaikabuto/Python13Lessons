@@ -1,0 +1,8 @@
+app - blog
+
+Article
+    name ->
+    description ->
+    image ->
+
+add_article
