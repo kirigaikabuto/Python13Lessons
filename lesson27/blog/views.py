@@ -1,21 +1,14 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
+from .models import *
 
 
 def main_page(request):
-    name = "yerassyl"
-    articles = [
-        {
-            "name": "article1",
-            "description": "it is the best article",
-        },
-        {
-            "name": "article2",
-            "description": "it is the best article",
-        }
-    ]
+    # get array of elemetns all elements
+    articles = Article.objects.all()
+    # get only one element
+    # articles = Article.objects.get(pk=1)
     d = {
-        "first_name": name,
-        "articles": articles,
+        "articles": articles
     }
 
     return render(request, "blog/main_page.html", context=d)

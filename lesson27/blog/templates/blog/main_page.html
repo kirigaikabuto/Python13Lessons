@@ -5,12 +5,12 @@
     <title>Main Page</title>
 </head>
 <body>
-<h1>Hello from main page {{first_name}}</h1>
-<p>{{articles}}</p>
 {% for i in articles %}
+<img src="{{i.image}}" width="200" height="200">
 <p>Name {{i.name}}</p>
 <p>Description {{i.description}}</p>
 <br>
+<hr>
 {% endfor%}
 </body>
 </html>
