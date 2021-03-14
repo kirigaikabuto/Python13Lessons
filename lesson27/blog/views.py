@@ -20,3 +20,7 @@ def detail_page(request, id):
         "article": article,
     }
     return render(request, "blog/detail_page.html", context=d)
+
+
+def add_page(request):
+    return render(request, "blog/add_page.html")
