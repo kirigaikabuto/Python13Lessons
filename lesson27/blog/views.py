@@ -12,3 +12,11 @@ def main_page(request):
     }
 
     return render(request, "blog/main_page.html", context=d)
+
+
+def detail_page(request, id):
+    article = Article.objects.get(pk=id)
+    d = {
+        "article": article,
+    }
+    return render(request, "blog/detail_page.html", context=d)

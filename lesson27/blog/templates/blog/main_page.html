@@ -8,7 +8,7 @@
 {% for i in articles %}
 <img src="{{i.image}}" width="200" height="200">
 <p>Name {{i.name}}</p>
-<p>Description {{i.description}}</p>
+<a href="{% url 'detail_page' id=i.pk%}">Подробнее</a>
 <br>
 <hr>
 {% endfor%}
