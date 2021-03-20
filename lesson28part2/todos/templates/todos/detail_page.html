@@ -7,7 +7,13 @@
 <body>
 <p>Title:{{todo.title}}</p>
 <p>Deadline:{{todo.deadline}}</p>
-<p>Is Completed:{{todo.isCompleted}}</p>
 <p>Days:{{days}}</p>
+<form method="post" action="{% url 'update_todo_action' %}">
+    {% csrf_token%}
+    <input type="hidden" value="{{todo.pk}}" name="id">
+    <input type="checkbox" value="{{todo.isCompleted}}" name="isCompleted">
+    <br>
+    <input type="submit" value="Save">
+</form>
 </body>
 </html>

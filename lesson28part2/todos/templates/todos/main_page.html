@@ -138,10 +138,20 @@
 </div>
 
 <ul id="myUL">
-    {% for i in todos%}
+    <h1>Not completed</h1>
+    {% for i in todos_not_completed%}
     <li>
         <a href="{% url 'detail_page' id=i.pk%}">{{i.title}}</a>
-        <span class="close"><a href="#">X</a></span>
+        <span class="close"><a href="{% url 'remove_todo_action' id=i.pk%}">X</a></span>
+
+    </li>
+    {%endfor%}
+    <hr>
+    <h1>Completed</h1>
+        {% for i in todos_completed%}
+    <li>
+        <a href="{% url 'detail_page' id=i.pk%}">{{i.title}}</a>
+        <span class="close"><a href="{% url 'remove_todo_action' id=i.pk%}">X</a></span>
 
     </li>
     {%endfor%}
