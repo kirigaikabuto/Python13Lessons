@@ -128,7 +128,8 @@
 
 <div id="myDIV" class="header">
     <h2 style="margin:5px">My To Do List</h2>
-    <form method="post">
+    <form method="post" action="{% url 'add_todo_action'%}">
+        {%csrf_token%}
         <input type="text" id="myInput" placeholder="Title..." name="title"/>
         <input type="date" name="deadline">
         <br/>
@@ -137,11 +138,13 @@
 </div>
 
 <ul id="myUL">
+    {% for i in todos%}
     <li>
-        <a href="#">Hit the gym</a>
+        <a href="{% url 'detail_page' id=i.pk%}">{{i.title}}</a>
         <span class="close"><a href="#">X</a></span>
 
     </li>
+    {%endfor%}
 </ul>
 
 </body>
