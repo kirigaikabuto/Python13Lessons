@@ -1,0 +1,6 @@
+Todo application
+
+model - Todo
+    name
+    created_date -> (django datetime) -> он должен создваться автоматически когда кто то создает todo
+    deadline -> date (django datetime) -> пользователь должен сам ставить

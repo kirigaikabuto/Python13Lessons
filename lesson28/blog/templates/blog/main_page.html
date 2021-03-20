@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+</head>
+<body>
+<a href="{% url 'add_page'%}">Добавить новую статью</a>
+<br>
+<br>
+<br>
+{% for i in articles %}
+<img src="{{i.image}}" width="200" height="200">
+<p>Name {{i.name}}</p>
+<a href="{% url 'detail_page' id=i.pk%}">Подробнее</a>
+<br>
+<hr>
+{% endfor%}
+</body>
+</html>

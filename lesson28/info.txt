@@ -1,0 +1,16 @@
+app - blog
+
+Article
+    name ->
+    description ->
+    image ->
+
+add_article
+
+
+1. Create model in models.py
+1.1 Make migrations -> команда которая позволит создать копии моделей для определенной базы данных
+python manage.py makemigrations
+1.2 migrate -> команда которая загрузит наши копии в базу данных( создаст таблицы в базе данных)
+python manage.py migrate
+1.3 добавить модель в admin.py
