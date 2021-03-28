@@ -3,12 +3,15 @@ from .models import *
 
 
 def main_page(request):
-    todos_not_completed = Todo.objects.all().filter(isCompleted=False)
-    todos_completed = Todo.objects.all().filter(isCompleted=True)
-    d = {
-        "todos_not_completed": todos_not_completed,
-        "todos_completed": todos_completed,
-    }
+    user = request.user
+    d = {}
+    if user.is_authenticated:
+        todos_not_completed = Todo.objects.all().filter(isCompleted=False, author=user)
+        todos_completed = Todo.objects.all().filter(isCompleted=True, author=user)
+        d = {
+            "todos_not_completed": todos_not_completed,
+            "todos_completed": todos_completed,
+        }
     return render(request, "todos/main_page.html", context=d)
 
 
@@ -23,9 +26,10 @@ def detail_page(request, id):
 
 
 def add_todo_action(request):
+    user = request.user
     title = request.POST["title"]
     deadline = request.POST["deadline"]
-    todo = Todo(title=title, deadline=deadline)
+    todo = Todo(title=title, deadline=deadline, author=user)
     todo.save()
     return redirect("main_page")
 
