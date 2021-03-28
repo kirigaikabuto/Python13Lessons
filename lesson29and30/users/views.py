@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, HttpResponse
 from .forms import *
 from django.contrib.auth import authenticate, login, logout
+from .models import *
 
 
 def profile_page(request):
@@ -21,7 +22,8 @@ def register_page(request):
 def register_action(request):
     form = RegistrationForm(request.POST)
     if form.is_valid():
-        form.save()
+        user = form.save()
+        create_log(user, "register")
         return redirect("login_page")
     else:
         d = {
@@ -47,6 +49,7 @@ def login_action(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
+                create_log(user, "login")
                 return redirect("main_page")
             else:
                 return HttpResponse("User is deactivated")
@@ -64,3 +67,8 @@ def login_action(request):
 def log_out_action(request):
     logout(request)
     return redirect("main_page")
+
+
+def create_log(user, action):
+    log = Log(user=user, action=action)
+    log.save()

@@ -1,1 +1,16 @@
 pip install django_crispy_forms
+
+
+Log
+    user
+    action
+    time
+
+    admin
+    add_todo
+
+    admin
+    login
+
+    admin
+    logout

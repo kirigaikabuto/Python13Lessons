@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import *
+from users.views import create_log
 
 
 def main_page(request):
@@ -31,12 +32,14 @@ def add_todo_action(request):
     deadline = request.POST["deadline"]
     todo = Todo(title=title, deadline=deadline, author=user)
     todo.save()
+    create_log(user, "add_todo")
     return redirect("main_page")
 
 
 def remove_todo_action(request, id):
     instance = Todo.objects.get(pk=id)
     instance.delete()
+    create_log(request.user, "remove_todo")
     return redirect("main_page")
 
 
@@ -46,4 +49,5 @@ def update_todo_action(request):
     todo = Todo.objects.get(pk=id)
     todo.isCompleted = isCompleted
     todo.save()
+    create_log(request.user, "update_todo")
     return redirect("main_page")
