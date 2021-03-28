@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, HttpResponse
 from .forms import *
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 
 def profile_page(request):
@@ -47,7 +47,7 @@ def login_action(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return redirect("profile_page")
+                return redirect("main_page")
             else:
                 return HttpResponse("User is deactivated")
         else:
@@ -59,3 +59,8 @@ def login_action(request):
             "error": form.errors,
         }
         return render(request, "users/login_page.html", context=d)
+
+
+def log_out_action(request):
+    logout(request)
+    return redirect("main_page")

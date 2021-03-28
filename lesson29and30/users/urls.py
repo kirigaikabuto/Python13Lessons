@@ -7,4 +7,5 @@ urlpatterns = [
     path("register_action/", register_action, name="register_action"),
     path("login/", login_page, name="login_page"),
     path("login_action/", login_action, name="login_action"),
+    path("logout_action/", log_out_action, name="log_out_action"),
 ]

@@ -125,8 +125,17 @@
     </style>
 </head>
 <body>
+{%if user.is_authenticated %}
+<p>{{user.username}}</p>
+<a href="{% url 'profile_page'%}">Profile</a>
+<a href="{% url 'log_out_action'%}">Log out</a>
+{%else%}
 <a href="{% url 'login_page' %}">Login</a>
 <a href="{% url 'register_page' %}">Register</a>
+{%endif%}
+
+
+{%if user.is_authenticated %}
 <div id="myDIV" class="header">
     <h2 style="margin:5px">My To Do List</h2>
     <form method="post" action="{% url 'add_todo_action'%}">
@@ -157,6 +166,6 @@
     </li>
     {%endfor%}
 </ul>
-
+{%endif%}
 </body>
 </html>
