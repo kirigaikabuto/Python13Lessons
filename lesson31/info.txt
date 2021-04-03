@@ -1,0 +1,42 @@
+1) install library django
+pip install django
+
+2) create project with django
+django-admin startproject mysite .
+
+3) create app with django
+python manage.py startapp products
+
+4) mysite -> settings.py
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'products',
+]
+
+5) create urls.py in products
+products.urls.py
+
+from django.urls import path
+
+urlpatterns = [
+
+]
+
+6) create connection from mysite urls to products urls
+mysite.urls.py
+
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path("", include("products.urls")),
+]
+
+7)
