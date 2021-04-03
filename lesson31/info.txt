@@ -54,4 +54,9 @@ urlpatterns = [
 9) run project
 python manage.py runserver
 
-10) create response like htmls file
+10) create response like html file
+
+11)
+git add .
+git commit -m "1321321231"
+git push
