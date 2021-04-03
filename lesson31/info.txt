@@ -3,6 +3,7 @@ pip install django
 
 2) create project with django
 django-admin startproject mysite .
+python manage.py migrate
 
 3) create app with django
 python manage.py startapp products
@@ -39,4 +40,18 @@ urlpatterns = [
     path("", include("products.urls")),
 ]
 
-7)
+7) create main_page view in lesson31 -> views.py
+def main_page():
+    return HttpResponse("Hello from main page")
+
+8) add view to urls.py
+from django.urls import path
+from .views import *
+
+urlpatterns = [
+    path("", main_page, name="main_page")
+]
+9) run project
+python manage.py runserver
+
+10) create response like htmls file
