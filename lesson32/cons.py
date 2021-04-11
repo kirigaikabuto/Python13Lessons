@@ -4,4 +4,4 @@ consumer = KafkaConsumer("python_lesson")
 for i in consumer:
     jsonData = i.value
     user = json.loads(jsonData)
-    print(user["username"])
+    print(user)
