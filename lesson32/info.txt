@@ -6,4 +6,5 @@ Producer - это тот кто отправляет данные в кафку
 Consumer - это тот кто принимает данные
 
 4) чтобы увидеть сообщения которые хранятся в топике
+cd путь к папке kafka/bin/windows
 kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic python_lesson --from-beginning
