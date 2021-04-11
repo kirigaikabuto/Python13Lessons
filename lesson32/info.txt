@@ -1,0 +1,9 @@
+1) kafka install https://www.goavega.com/install-apache-kafka-on-windows/
+2) install lib
+pip install kafka-python
+3) kafka
+Producer - это тот кто отправляет данные в кафку
+Consumer - это тот кто принимает данные
+
+4) чтобы увидеть сообщения которые хранятся в топике
+kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic python_lesson --from-beginning
