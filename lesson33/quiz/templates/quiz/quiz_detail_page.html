@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz detail</title>
+</head>
+<body>
+{{quiz.name}}
+<br>
+{%for i in questions%}
+<p>{{i.question}}</p>
+<p>
+    {%for j in i.answers.all%}
+    <input type="radio" name="{{j.pk}}"> {{j.name}}
+    {%endfor%}
+</p>
+{%endfor%}
+</body>
+</html>

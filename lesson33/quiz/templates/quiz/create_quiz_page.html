@@ -20,7 +20,7 @@
 </form>
 <p>Список созданных Опросников</p>
 {%for i in quizes%}
-<a href="#">{{i.name}}</a>
+<a href="{% url 'quiz_detail_page' id=i.pk%}">{{i.name}}</a>
 <br>
 {%endfor%}
 </body>
