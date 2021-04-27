@@ -9,3 +9,7 @@ python manage.py runserver
 python manage.py startapp quiz
 
 3)создать главное приложение в котором будет хранится шаблон первой страницы
+
+4) создание модели quiz
+python manage.py makemigrations
+python manage.py migrate

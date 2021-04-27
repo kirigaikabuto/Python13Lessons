@@ -19,5 +19,9 @@
     {%endif%}
 </form>
 <p>Список созданных Опросников</p>
+{%for i in quizes%}
+<a href="#">{{i.name}}</a>
+<br>
+{%endfor%}
 </body>
 </html>
