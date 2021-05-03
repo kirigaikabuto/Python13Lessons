@@ -38,3 +38,27 @@ def quiz_detail_page(request, id):
         "questions": questions,
     }
     return render(request, "quiz/quiz_detail_page.html", context=context)
+
+
+def add_question_page(request, id):
+    quiz = Quiz.objects.get(pk=id)
+    d = {
+        "quiz": quiz,
+    }
+    return render(request, "quiz/add_question_page.html", context=d)
+
+
+def add_question_page_action(request):
+    quizId = int(request.POST["id"])
+    quiz = Quiz.objects.get(pk=quizId)
+    question = request.POST["question"]
+    answer1 = request.POST["answer1"]
+    answer2 = request.POST["answer2"]
+    a1 = QuestionAnswer.objects.create(name=answer1)
+    a2 = QuestionAnswer.objects.create(name=answer2)
+    q = Question(owner=request.user, quiz=quiz, question=question, rightAnswer=a2)
+    q.save()
+    q.answers.add(a1)
+    q.answers.add(a2)
+    q.save()
+    return quiz_detail_page(request=request, id=quizId)
