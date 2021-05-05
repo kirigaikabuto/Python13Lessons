@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'quiz',
     'users',
     'crispy_forms',
+    'quiz_submission',
 ]
 
 MIDDLEWARE = [
