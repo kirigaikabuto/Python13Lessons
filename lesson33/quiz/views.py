@@ -30,9 +30,6 @@ def create_quiz_action(request):
 def quiz_detail_page(request, id):
     quiz = Quiz.objects.get(pk=id)
     questions = Question.objects.filter(quiz=quiz)
-    for i in questions:
-        for j in i.answers.all():
-            print(j)
     context = {
         "quiz": quiz,
         "questions": questions,

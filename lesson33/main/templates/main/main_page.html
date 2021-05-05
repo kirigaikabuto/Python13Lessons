@@ -16,7 +16,7 @@
 {%endif%}
 <p>Список тестов</p>
 {%for i in quizs%}
-<p><a href="#">{{i.name}} </a> created by {{i.owner.username}}</p>
+<p><a href="{% url 'quiz_show_page' id=i.pk%}">{{i.name}} </a> created by {{i.owner.username}}</p>
 {%endfor%}
 </body>
 </html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Submission</title>
+</head>
+<body>
+<p>{{quiz.name}}</p>
+
+<form method="post" action="{% url 'quiz_submission_action'%}">
+    {% csrf_token%}
+    <input type="hidden" value="{{quiz.pk}}" name="quiz_id">
+    {%for i in questions%}
+    <p>{{i.question}}</p>
+    <p>
+        <select name="question{{i.pk}}">
+            {%for j in i.answers.all%}
+            <option value="{{j.pk}}">{{j.name}}</option>
+            {%endfor%}
+        </select>
+        <br>
+    </p>
+    {%endfor%}
+    <input type="submit" value="submit">
+</form>
+</body>
+</html>

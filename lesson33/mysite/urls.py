@@ -6,4 +6,5 @@ urlpatterns = [
     path("", include("main.urls")),
     path("quiz/", include("quiz.urls")),
     path("users/", include("users.urls")),
+    path("quiz_submissions/", include("quiz_submission.urls")),
 ]

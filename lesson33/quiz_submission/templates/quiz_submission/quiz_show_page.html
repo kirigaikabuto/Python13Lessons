@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Submission</title>
+</head>
+<body>
+<p>{{quiz.name}}</p>
+<a href="{% url 'quiz_show_detail_page' id=quiz.pk%}">Start</a>
+<p>Previous Results</p>
+</body>
+</html>
