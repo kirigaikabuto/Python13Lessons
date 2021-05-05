@@ -3,7 +3,7 @@ from .models import *
 
 
 def create_quiz_page(request, contextValue=None):
-    quizes = Quiz.objects.all()
+    quizes = Quiz.objects.filter(owner=request.user)
     if contextValue is not None:
         contextValue["quizes"] = quizes
     else:
@@ -24,7 +24,7 @@ def create_quiz_action(request):
     q = Quiz(name=quizName, owner=request.user)
     q.save()
     data = {"id": q.pk}
-    return create_question_page(request, data=data)
+    return quiz_detail_page(request, id=q.pk)
 
 
 def quiz_detail_page(request, id):
