@@ -25,6 +25,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'quiz',
+    'users',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [

@@ -8,6 +8,11 @@
 
 {%if user.is_authenticated %}
 <a href="{% url 'create_quiz_page' %}">Создать опросник</a>
+<a href="{% url 'profile_page' %}">Профиль</a>
+<a href="{% url 'log_out_action'%}">Выйти</a>
+{%else%}
+<a href="{% url 'login_page'%}">Login</a>
+<a href="{% url 'register_page'%}">Register</a>
 {%endif%}
 <p>Список тестов</p>
 </body>
