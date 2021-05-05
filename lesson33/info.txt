@@ -13,3 +13,5 @@ python manage.py startapp quiz
 4) создание модели quiz
 python manage.py makemigrations
 python manage.py migrate
+
+lesson34
