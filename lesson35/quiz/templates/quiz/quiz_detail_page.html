@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz detail</title>
+</head>
+<body>
+{{quiz.name}}
+<br>
+ <a href="{%url 'add_question_page' id=quiz.pk%}">Add question</a>
+<br>
+{%for i in questions%}
+<p>{{i.question}}</p>
+<p>
+    {%for j in i.answers.all%}
+    <input type="radio" name="{{j.pk}}"> {{j.name}}
+    {%endfor%}
+    <br>
+</p>
+{%endfor%}
+
+</body>
+</html>

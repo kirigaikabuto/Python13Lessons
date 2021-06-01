@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Question Page</title>
+</head>
+<body>
+<form method="post" action="{% url 'add_question_page_action'%}">
+    {%csrf_token%}
+    <input type="hidden" value="{{quiz.pk}}" name="id">
+    <p>Question:<input type="text" name="question"></p>
+    <p>Answer1<input type="text" name="answer1"></p>
+    <p>Answer2<input type="text" name="answer2"></p>
+    <input type="submit" value="Add">
+</form>
+</body>
+</html>

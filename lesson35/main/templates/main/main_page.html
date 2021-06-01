@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz App</title>
+</head>
+<body>
+
+{%if user.is_authenticated %}
+<a href="{% url 'create_quiz_page' %}">Создать опросник</a>
+<a href="{% url 'profile_page' %}">Профиль</a>
+<a href="{% url 'log_out_action'%}">Выйти</a>
+{%else%}
+<a href="{% url 'login_page'%}">Login</a>
+<a href="{% url 'register_page'%}">Register</a>
+{%endif%}
+<p>Список тестов</p>
+{%for i in quizs%}
+<p><a href="{% url 'quiz_show_page' id=i.pk%}">{{i.name}} </a> created by {{i.owner.username}}</p>
+{%endfor%}
+</body>
+</html>
