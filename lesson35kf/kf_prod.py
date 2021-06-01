@@ -1,13 +1,11 @@
 from kafka import KafkaProducer
 import json
 
-d = {
-    "username": "yerassyl",
-    "password": 414212412,
-}
-jsonData = json.dumps(d).encode("ascii")
-producer = KafkaProducer(bootstrap_servers="localhost:9092")
 
-producer.send("lesson35kf", jsonData)
+def send_message_to_kf(data, topicName):
+    jsonData = json.dumps(data).encode("ascii")
+    producer = KafkaProducer(bootstrap_servers="localhost:9092")
 
-producer.flush()
+    producer.send(topicName, jsonData)
+
+    producer.flush()
