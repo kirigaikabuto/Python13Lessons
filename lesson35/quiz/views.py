@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import *
+from users.views import send_message_to_kf
+import datetime
 
 
 def create_quiz_page(request, contextValue=None):
@@ -23,6 +25,12 @@ def create_quiz_action(request):
         return create_quiz_page(request=request, contextValue=data)
     q = Quiz(name=quizName, owner=request.user)
     q.save()
+    data = {
+        "username": request.user.username,
+        "action": "create_quiz",
+        "time": str(datetime.datetime.now())
+    }
+    send_message_to_kf(data, "quiz_app")
     data = {"id": q.pk}
     return quiz_detail_page(request, id=q.pk)
 
