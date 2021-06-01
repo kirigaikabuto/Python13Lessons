@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect, HttpResponse
 from .forms import *
 from django.contrib.auth import authenticate, login, logout
+from kafka import KafkaProducer
+import json
+import datetime
 
 
 def profile_page(request):
@@ -45,6 +48,13 @@ def login_action(request):
         cd = form.cleaned_data
         user = authenticate(username=cd["username"], password=cd["password"])
         if user is not None:
+            data = {
+                "username": cd["username"],
+                "action": "login",
+                "time": str(datetime.datetime.now())
+            }
+            print(data)
+            send_message_to_kf(data, "quiz_app")
             if user.is_active:
                 login(request, user)
 
@@ -66,3 +76,9 @@ def log_out_action(request):
     logout(request)
     return redirect("main_page")
 
+
+def send_message_to_kf(data, topicName):
+    jsonData = json.dumps(data).encode("ascii")
+    producer = KafkaProducer(bootstrap_servers="localhost:9092")
+    producer.send(topicName, jsonData)
+    producer.flush()
