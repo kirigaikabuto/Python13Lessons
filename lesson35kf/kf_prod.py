@@ -5,7 +5,7 @@ d = {
     "username": "asdsad",
     "password": 12321,
 }
-jsonData = json.dumps(d)
+jsonData = json.dumps(d).encode("ascii")
 producer = KafkaProducer(bootstrap_servers="localhost:9092")
 
 producer.send("lesson35kf", jsonData)
