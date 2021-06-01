@@ -2,8 +2,8 @@ from kafka import KafkaProducer
 import json
 
 d = {
-    "username": "asdsad",
-    "password": 12321,
+    "username": "yerassyl",
+    "password": 414212412,
 }
 jsonData = json.dumps(d).encode("ascii")
 producer = KafkaProducer(bootstrap_servers="localhost:9092")
