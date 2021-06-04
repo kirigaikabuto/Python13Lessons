@@ -1,1 +1,7 @@
-https://www.elastic.co/guide/en/elasticsearch/reference/current/windows.html
+
+1) download https://www.elastic.co/downloads/elasticsearch
+2) install https://www.elastic.co/guide/en/elastic-stack-get-started/current/get-started-elastic-stack.html
+3) settings https://www.elastic.co/guide/en/elasticsearch/reference/7.13/security-minimal-setup.html
+
+1) download https://www.elastic.co/downloads/kibana
+2) install
