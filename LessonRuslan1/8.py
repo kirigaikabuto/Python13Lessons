@@ -4,5 +4,9 @@ arr = [
     [8, 9, 10, 1]
 ]
 result = []
-print(arr[0][1])
-# [10, 22, 28]
+for element_arr in arr:
+    sumi = 0
+    for value in element_arr:
+        sumi += value
+    result.append(sumi)
+print(result)
